@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
-"""
-Starts UI
-"""
 import tkinter as tk
-
-from front_end import homescreen
+from front_end import setup
 
 __author__ = "Mary Catherine Good"
 
+"""
+Starts Application UI
+"""
 if __name__ == '__main__':
     root = tk.Tk()
-    app = homescreen.Home(root)
+    app = setup.UI_Setup(root)
     root.mainloop()
