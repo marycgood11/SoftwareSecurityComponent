@@ -64,7 +64,7 @@ class Scenario1(ScenarioFrame, tk.Frame):
         ScenarioFrame.__init__(self, parent,controller, scenario1_title, scenario1_text, OPTIONS, v, next)
 
 
-class Scenario2(tk.Frame):
+class Scenario2(ScenarioFrame, tk.Frame):
     # INITIALIZES SCENARIO 2
     def __init__(self, parent, controller):
         # SCENARIO
@@ -81,7 +81,7 @@ class Scenario2(tk.Frame):
         ScenarioFrame.__init__(self, parent,controller, scenario2_title, scenario2_text, OPTIONS, v, next)
 
 
-class Scenario3(tk.Frame):
+class Scenario3(ScenarioFrame, tk.Frame):
     # INITIALIZES SCENARIO 3
     def __init__(self, parent, controller):
         # SCENARIO
@@ -98,7 +98,7 @@ class Scenario3(tk.Frame):
         ScenarioFrame.__init__(self, parent,controller, scenario3_title, scenario3_text, OPTIONS, v, next)
 
 
-class Scenario4(tk.Frame):
+class Scenario4(ScenarioFrame, tk.Frame):
     # INITIALIZES SCENARIO 4
     def __init__(self, parent, controller):
         # SCENARIO
@@ -115,7 +115,7 @@ class Scenario4(tk.Frame):
         ScenarioFrame.__init__(self, parent,controller, scenario4_title, scenario4_text, OPTIONS, v, next)
 
 
-class Scenario5(tk.Frame):
+class Scenario5(ScenarioFrame, tk.Frame):
     # INITIALIZES SCENARIO 5
     def __init__(self, parent, controller):
         # SCENARIO
@@ -132,7 +132,7 @@ class Scenario5(tk.Frame):
         ScenarioFrame.__init__(self, parent,controller, scenario5_title, scenario5_text, OPTIONS, v, next)
 
 
-class Scenario6(tk.Frame):
+class Scenario6(ScenarioFrame, tk.Frame):
     # INITIALIZES SCENARIO 6
     def __init__(self, parent, controller):
         # SCENARIO
@@ -149,7 +149,7 @@ class Scenario6(tk.Frame):
         ScenarioFrame.__init__(self, parent,controller, scenario6_title, scenario6_text, OPTIONS, v, next)
 
 
-class Scenario7(tk.Frame):
+class Scenario7(ScenarioFrame, tk.Frame):
     # INITIALIZES SCENARIO 7
     def __init__(self, parent, controller):
         # SCENARIO
@@ -166,7 +166,7 @@ class Scenario7(tk.Frame):
         ScenarioFrame.__init__(self, parent,controller, scenario7_title, scenario7_text, OPTIONS, v, next)
 
 
-class Scenario8(tk.Frame):
+class Scenario8(ScenarioFrame, tk.Frame):
     # INITIALIZES SCENARIO 8
     def __init__(self, parent, controller):
         # SCENARIO
@@ -183,7 +183,7 @@ class Scenario8(tk.Frame):
         ScenarioFrame.__init__(self, parent,controller, scenario8_title, scenario8_text, OPTIONS, v, next)
 
 
-class Scenario9(tk.Frame):
+class Scenario9(ScenarioFrame, tk.Frame):
     # INITIALIZES SCENARIO 9
     def __init__(self, parent, controller):
         # SCENARIO
@@ -200,7 +200,7 @@ class Scenario9(tk.Frame):
         ScenarioFrame.__init__(self, parent,controller, scenario9_title, scenario9_text, OPTIONS, v, next)
 
 
-class Scenario10(tk.Frame):
+class Scenario10(ScenarioFrame, tk.Frame):
     # INITIALIZES SCENARIO 10
     def __init__(self, parent, controller):
         # SCENARIO
@@ -217,7 +217,7 @@ class Scenario10(tk.Frame):
         ScenarioFrame.__init__(self, parent,controller, scenario10_title, scenario10_text, OPTIONS, v, next)
 
 
-class Scenario11(tk.Frame):
+class Scenario11(ScenarioFrame, tk.Frame):
     # INITIALIZES SCENARIO 11
     def __init__(self, parent, controller):
         # SCENARIO
@@ -234,7 +234,7 @@ class Scenario11(tk.Frame):
         ScenarioFrame.__init__(self, parent,controller, scenario11_title, scenario11_text, OPTIONS, v, next)
 
 
-class Scenario12(tk.Frame):
+class Scenario12(ScenarioFrame, tk.Frame):
     # INITIALIZES SCENARIO 12
     def __init__(self, parent, controller):
         # SCENARIO
