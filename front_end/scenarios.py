@@ -96,3 +96,156 @@ class Scenario3(tk.Frame):
         next = "Scenario4"
 
         ScenarioFrame.__init__(self, parent,controller, scenario3_title, scenario3_text, OPTIONS, v, next)
+
+
+class Scenario4(tk.Frame):
+    # INITIALIZES SCENARIO 4
+    def __init__(self, parent, controller):
+        # SCENARIO
+        scenario4_title = "Scenario 4: ..."
+        scenario4_text = "INFORMATION ..."
+        # SCENARIO RADIO BUTTONS OPTIONS
+        OPTIONS = [("ANSWER 1" , 1),
+        ("ANSWER 2" , 2),
+        ("ANSWER 3" , 3)]
+        v = IntVar()
+        # NEXT PAGE
+        next = "Scenario5"
+
+        ScenarioFrame.__init__(self, parent,controller, scenario4_title, scenario4_text, OPTIONS, v, next)
+
+
+class Scenario5(tk.Frame):
+    # INITIALIZES SCENARIO 5
+    def __init__(self, parent, controller):
+        # SCENARIO
+        scenario5_title = "Scenario 5: ..."
+        scenario5_text = "INFORMATION ..."
+        # SCENARIO RADIO BUTTONS OPTIONS
+        OPTIONS = [("ANSWER 1" , 1),
+        ("ANSWER 2" , 2),
+        ("ANSWER 3" , 3)]
+        v = IntVar()
+        # NEXT PAGE
+        next = "Scenario6"
+
+        ScenarioFrame.__init__(self, parent,controller, scenario5_title, scenario5_text, OPTIONS, v, next)
+
+
+class Scenario6(tk.Frame):
+    # INITIALIZES SCENARIO 6
+    def __init__(self, parent, controller):
+        # SCENARIO
+        scenario6_title = "Scenario 6: ..."
+        scenario6_text = "INFORMATION ..."
+        # SCENARIO RADIO BUTTONS OPTIONS
+        OPTIONS = [("ANSWER 1" , 1),
+        ("ANSWER 2" , 2),
+        ("ANSWER 3" , 3)]
+        v = IntVar()
+        # NEXT PAGE
+        next = "Scenario7"
+
+        ScenarioFrame.__init__(self, parent,controller, scenario6_title, scenario6_text, OPTIONS, v, next)
+
+
+class Scenario7(tk.Frame):
+    # INITIALIZES SCENARIO 7
+    def __init__(self, parent, controller):
+        # SCENARIO
+        scenario7_title = "Scenario 7: ..."
+        scenario7_text = "INFORMATION ..."
+        # SCENARIO RADIO BUTTONS OPTIONS
+        OPTIONS = [("ANSWER 1" , 1),
+        ("ANSWER 2" , 2),
+        ("ANSWER 3" , 3)]
+        v = IntVar()
+        # NEXT PAGE
+        next = "Scenario8"
+
+        ScenarioFrame.__init__(self, parent,controller, scenario7_title, scenario7_text, OPTIONS, v, next)
+
+
+class Scenario8(tk.Frame):
+    # INITIALIZES SCENARIO 8
+    def __init__(self, parent, controller):
+        # SCENARIO
+        scenario8_title = "Scenario 8: ..."
+        scenario8_text = "INFORMATION ..."
+        # SCENARIO RADIO BUTTONS OPTIONS
+        OPTIONS = [("ANSWER 1" , 1),
+        ("ANSWER 2" , 2),
+        ("ANSWER 3" , 3)]
+        v = IntVar()
+        # NEXT PAGE
+        next = "Scenario9"
+
+        ScenarioFrame.__init__(self, parent,controller, scenario8_title, scenario8_text, OPTIONS, v, next)
+
+
+class Scenario9(tk.Frame):
+    # INITIALIZES SCENARIO 9
+    def __init__(self, parent, controller):
+        # SCENARIO
+        scenario9_title = "Scenario 9: ..."
+        scenario9_text = "INFORMATION ..."
+        # SCENARIO RADIO BUTTONS OPTIONS
+        OPTIONS = [("ANSWER 1" , 1),
+        ("ANSWER 2" , 2),
+        ("ANSWER 3" , 3)]
+        v = IntVar()
+        # NEXT PAGE
+        next = "Scenario10"
+
+        ScenarioFrame.__init__(self, parent,controller, scenario9_title, scenario9_text, OPTIONS, v, next)
+
+
+class Scenario10(tk.Frame):
+    # INITIALIZES SCENARIO 10
+    def __init__(self, parent, controller):
+        # SCENARIO
+        scenario10_title = "Scenario 10: ..."
+        scenario10_text = "INFORMATION ..."
+        # SCENARIO RADIO BUTTONS OPTIONS
+        OPTIONS = [("ANSWER 1" , 1),
+        ("ANSWER 2" , 2),
+        ("ANSWER 3" , 3)]
+        v = IntVar()
+        # NEXT PAGE
+        next = "Scenario11"
+
+        ScenarioFrame.__init__(self, parent,controller, scenario10_title, scenario10_text, OPTIONS, v, next)
+
+
+class Scenario11(tk.Frame):
+    # INITIALIZES SCENARIO 11
+    def __init__(self, parent, controller):
+        # SCENARIO
+        scenario11_title = "Scenario 11: ..."
+        scenario11_text = "INFORMATION ..."
+        # SCENARIO RADIO BUTTONS OPTIONS
+        OPTIONS = [("ANSWER 1" , 1),
+        ("ANSWER 2" , 2),
+        ("ANSWER 3" , 3)]
+        v = IntVar()
+        # NEXT PAGE
+        next = "Scenario12"
+
+        ScenarioFrame.__init__(self, parent,controller, scenario11_title, scenario11_text, OPTIONS, v, next)
+
+
+class Scenario12(tk.Frame):
+    # INITIALIZES SCENARIO 12
+    def __init__(self, parent, controller):
+        # SCENARIO
+        scenario12_title = "Scenario 12: ..."
+        scenario12_text = "INFORMATION ..."
+        # SCENARIO RADIO BUTTONS OPTIONS
+        OPTIONS = [("ANSWER 1" , 1),
+        ("ANSWER 2" , 2),
+        ("ANSWER 3" , 3)]
+        v = IntVar()
+        # NEXT PAGE
+        next = "Score"
+
+        ScenarioFrame.__init__(self, parent,controller, scenario12_title, scenario12_text, OPTIONS, v, next)
