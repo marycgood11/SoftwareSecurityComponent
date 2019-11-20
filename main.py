@@ -7,7 +7,6 @@ __author__ = "Mary Catherine Good"
 """
 Starts Application UI
 """
-if __name__ == '__main__':
-    root = tk.Tk()
-    app = setup.UI_Setup(root)
-    root.mainloop()
+if __name__ == "__main__":
+    app = setup.UI_Setup()
+    app.mainloop()
