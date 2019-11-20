@@ -155,8 +155,3 @@ class Scenario3(tk.Frame):
         back_button.grid(row=0, column=0)
         place_holder_label2.grid(row=0, column=1)
         #next_button.grid(row=0, column=2)
-
-
-if __name__ == "__main__":
-    app = UI_Setup()
-    app.mainloop()
