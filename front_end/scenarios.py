@@ -7,10 +7,12 @@ __author__ = "Mary Catherine Good"
 
 # PARENT CLASS - UI OUTLINE FOR THE SCENARIOS
 class ScenarioFrame(tk.Frame):
-    def __init__(self, parent, controller, scenario_title, scenario_text, OPTIONS, v, next):
+    def __init__(self, parent, controller, scenario_title, scenario_text, OPTIONS, next):
         tk.Frame.__init__(self, parent)
         self.controller = controller
         self.configure(background="#E6F1FF")
+
+        v = IntVar()        # DEALS WITH RADIO BUTTONS
 
         # CREATE FRAMES
         title_frame = tk.Frame(self, background="#E6F1FF", width=550, pady=10)
@@ -36,7 +38,7 @@ class ScenarioFrame(tk.Frame):
         security_awareness_label = tk.Label(title_frame, text="Security Awareness Training", font=("Noteworthy", 30), anchor="center", background="#E6F1FF", pady=15)
         scenario1_label = tk.Label(main_frame, text=scenario_title, font=("Arial 20 bold"), wraplength=425, anchor="center", justify="left", background="#E6F1FF", pady=10)
         info_label = tk.Label(main_frame, text=scenario_text, wraplength=425, justify="left", background="#E6F1FF")
-        place_holder_label1 = tk.Label(main_frame, background="#E6F1FF")
+        place_holder_label = tk.Label(main_frame, background="#E6F1FF")
         next_button = tk.Button(footer_frame, text="Next", font=(15), command=lambda: controller.show_frame(next), highlightbackground="#5BA3FF", pady=5, width=15)
 
         # PLACE WIDGETS ON THE FRAME
@@ -46,206 +48,149 @@ class ScenarioFrame(tk.Frame):
         for text, option in OPTIONS:
             b = tk.Radiobutton(main_frame, text=text, variable=v, value=option, wraplength=425, anchor="w", justify="left", background="#E6F1FF", pady=5, width=50)
             b.pack()
-        place_holder_label1.pack()
-        next_button.grid(row=0, column=0)
+        place_holder_label.pack()
+        next_button.pack(side="bottom")
 
+
+# SCENARIO 1 - PASSWORD CREATION
 class Scenario1(ScenarioFrame, tk.Frame):
-    # INITIALIZES SCENARIO 1
     def __init__(self, parent, controller):
-        # SCENARIO
         scenario1_title = "Scenario 1: Password Creation"
-        scenario1_text = "Alice just started a new job working at SONY Corporation.  As part of her new job, she has to create a new password to sign in and to access different applications. \nWhat rules should Alice follow when creating her new passwords?"
+        scenario1_text = "Alice just started a new job working at SONY Corporation. As part of her new job, she has to create a new password to sign in to access different applications. \nWhat rules should Alice follow when creating her new passwords?"
         # SCENARIO RADIO BUTTONS OPTIONS
-        OPTIONS = [("Answer 1" , 1), ("Answer 2" , 2), ("Answer 3" , 3)]
-        v = IntVar()
+        OPTIONS = [("Include: 12+ characters, upper and lower case letters, numbers, special characters. Not Include: personal information such as birthdays and names of pets and family. These rules will ensure that your new password is strong and tough for hackers to crack." , 1),
+        ("Include: 12+ characters, upper and lower case letters, numbers, special characters. Not Include: personal information such as birthdays and names of pets and family, words that can be found in the dictionary. These rules will ensure that your new password is strong and tough for hackers to crack." , 2),
+        ("Include: 12+ characters, upper and lower case letters, numbers, special characters. Not Include: words that can be found in the dictionary. These rules will ensure that your new password is strong and tough for hackers to crack.  But will also enable you to remember your password so you can sign in." , 3)]
         # NEXT PAGE
         next = "Scenario2"
 
-        ScenarioFrame.__init__(self, parent,controller, scenario1_title, scenario1_text, OPTIONS, v, next)
+        ScenarioFrame.__init__(self, parent,controller, scenario1_title, scenario1_text, OPTIONS, next)
 
 
+# SCENARIO 2 - PASSWORD USAGE
 class Scenario2(ScenarioFrame, tk.Frame):
-    # INITIALIZES SCENARIO 2
     def __init__(self, parent, controller):
         # SCENARIO
         scenario2_title = "Scenario 2: Password Usage"
-        scenario2_text = "Now even though Alice has created a new password, multiple applications require passwords.  She is thinking of using her new password, but is also considering using some passwords that she already has. This would make remembering passwords easier and she would not forget them as much.  \nWhat should Alice do?"
+        scenario2_text = "Now even though Alice has created a new password, multiple applications require passwords. She is thinking of using her new password, but is also considering using some passwords that she already has. This would make remembering passwords easier and she would not forget them as much. \nWhat should Alice do?"
         # SCENARIO RADIO BUTTONS OPTIONS
-        OPTIONS = [("Alice should just use her new password that she created since it follows SONY's new security policy. It is a strong password that likely will not be hacked." , 1),
-        ("Alice should use a combination of her new secure password that she just created and some of her old passwords. This way she will be able to remember all of her passwords and will not have to write them down anywhere. This will make it a lot harder for hackers to guess her passwords" , 2),
+        OPTIONS = [("Alice should just use her new password that she created since it follows best practices. It is a strong password that likely will not be hacked." , 1),
+        ("Alice should use a combination of her new secure password that she just created and some of her old passwords. This way she will be able to remember all of her passwords and will not have to write them down anywhere. This will make it a lot harder for hackers to guess her passwords." , 2),
         ("Alice should create a new password for each application and should not reuse any passwords. This may make it difficult to remember all of her passwords but it will be difficult for hackers to guess her passwords. To keep track of all passwords, she could use a secure password manager." , 3)]
-        v = IntVar()
         # NEXT PAGE
         next = "Scenario3"
 
-        ScenarioFrame.__init__(self, parent,controller, scenario2_title, scenario2_text, OPTIONS, v, next)
+        ScenarioFrame.__init__(self, parent,controller, scenario2_title, scenario2_text, OPTIONS, next)
 
 
+# SCENARIO 3 - PHYSICAL ACCESS
 class Scenario3(ScenarioFrame, tk.Frame):
-    # INITIALIZES SCENARIO 3
     def __init__(self, parent, controller):
         # SCENARIO
-        scenario3_title = "Scenario 3: ..."
-        scenario3_text = "INFORMATION ..."
+        scenario3_title = "Scenario 3: PHYSICAL ACCESS"
+        scenario3_text = "Throughout her work day, Alice gets up multiple times to go grab a new cup of coffee or to go chat with a coworker. The coffee station and her friend are both situated on the opposite side of the floor. Whenever she leaves, she sometimes locks her computer but not always.  She also sometimes remembers to bring her badge but since she does not need it to get back to her desk, it is not at the forefront of her mind. Alice also likes to take a 15 minute walk in the afternoon to clear her mind.  Sometimes when she re-enters the building she holds the door open for other people. \nHow would you rate Alice’s actions throughout the day?"
         # SCENARIO RADIO BUTTONS OPTIONS
-        OPTIONS = [("ANSWER 1" , 1),
-        ("ANSWER 2" , 2),
-        ("ANSWER 3" , 3)]
-        v = IntVar()
+        OPTIONS = [("Alice’s actions are a liability to the company." , 1),
+        ("Alice’s actions are not a liability to the company. Maybe next time though, she should lock her computer every time she leaves her desk so nothing gets stolen off of it." , 2),
+        ("Alice’s actions are not that big of a liability to the company. Maybe next time she should not hold the door open for other people because there is the chance that they are not actual employees of the company. Instead she should have them each badge in like she did." , 3)]
         # NEXT PAGE
         next = "Scenario4"
 
-        ScenarioFrame.__init__(self, parent,controller, scenario3_title, scenario3_text, OPTIONS, v, next)
+        ScenarioFrame.__init__(self, parent,controller, scenario3_title, scenario3_text, OPTIONS, next)
 
 
+# SCENARIO 4 - SEPARATION OF PRIVILEGE
 class Scenario4(ScenarioFrame, tk.Frame):
-    # INITIALIZES SCENARIO 4
     def __init__(self, parent, controller):
         # SCENARIO
-        scenario4_title = "Scenario 4: ..."
-        scenario4_text = "INFORMATION ..."
+        scenario4_title = "Scenario 4: Separation of Privilege"
+        scenario4_text = "Alice and her coworker Bob are talking about work at lunch one day.  Bob is talking about a task that he is currently working on.  It is a task that takes a lot of work.  It turns out the Alice has access to a system that would make Bob’s job easier and she has access to confidential information that Bob could potentially use.  Alice mentions this all to Bob.  Bob then asks Alice if she could grant him access to the system and pass along the information that she has. \nHow should Alice respond?"
         # SCENARIO RADIO BUTTONS OPTIONS
-        OPTIONS = [("ANSWER 1" , 1),
-        ("ANSWER 2" , 2),
-        ("ANSWER 3" , 3)]
-        v = IntVar()
+        OPTIONS = [("Of course Bob. It is more important to collaborate with coworkers and share information. This way we save time and energy while completing and enhancing a task." , 1),
+        ("Unfortunately, I can not grant you access Bob.  It would violate the separation of privilege." , 2),
+        ("I can get you the confidential information; however, I am unable to grant you access to the systems. That is not allowed under best practices." , 3)]
         # NEXT PAGE
         next = "Scenario5"
 
-        ScenarioFrame.__init__(self, parent,controller, scenario4_title, scenario4_text, OPTIONS, v, next)
+        ScenarioFrame.__init__(self, parent,controller, scenario4_title, scenario4_text, OPTIONS, next)
 
 
+# SCENARIO 5 - DATA ENCRYPTION
 class Scenario5(ScenarioFrame, tk.Frame):
     # INITIALIZES SCENARIO 5
     def __init__(self, parent, controller):
         # SCENARIO
-        scenario5_title = "Scenario 5: ..."
-        scenario5_text = "INFORMATION ..."
+        scenario5_title = "Scenario 5: Data Encryption"
+        scenario5_text = "Alice is sending a series of emails containing information - both sensitive materials and non-sensitive materials to another employee on her team. \nHow should she send the information so that it is sent safely?"
         # SCENARIO RADIO BUTTONS OPTIONS
-        OPTIONS = [("ANSWER 1" , 1),
-        ("ANSWER 2" , 2),
-        ("ANSWER 3" , 3)]
-        v = IntVar()
+        OPTIONS = [("Alice should always encrypt sensitive information that is sent via email." , 1),
+        ("Alice does not need to encrypt sensitive information since she is just sending the information to another person on her team." , 2),
+        ("Alice does not need to encrypt sensitive information since she is not sending it to an outside source." , 3)]
         # NEXT PAGE
         next = "Scenario6"
 
-        ScenarioFrame.__init__(self, parent,controller, scenario5_title, scenario5_text, OPTIONS, v, next)
+        ScenarioFrame.__init__(self, parent,controller, scenario5_title, scenario5_text, OPTIONS, next)
 
 
+# SCENARIO 6 - PHISHING
 class Scenario6(ScenarioFrame, tk.Frame):
-    # INITIALIZES SCENARIO 6
     def __init__(self, parent, controller):
         # SCENARIO
-        scenario6_title = "Scenario 6: ..."
-        scenario6_text = "INFORMATION ..."
+        scenario6_title = "Scenario 6: Phishing"
+        scenario6_text = "After sending the email, Alice is going through her inbox. She finds an email from an outside source that she does not recognize but it appears legit. The email contains interesting information with a link to learn more. \nWhat should Alice do with the email?"
         # SCENARIO RADIO BUTTONS OPTIONS
-        OPTIONS = [("ANSWER 1" , 1),
-        ("ANSWER 2" , 2),
-        ("ANSWER 3" , 3)]
-        v = IntVar()
+        OPTIONS = [("Since it looks legit and includes interesting information, she should click the link to learn more. Learning something new never hurts anyone!" , 1),
+        ("Since Alice does not recognize the email, there is a possibility that is could be a phishing email but it also may not be one.  To be safe though, Alice decides not to open the link even though she is curious." , 2),
+        ("Alice should report the email to her cybersecurity group and delete the email. It could be a phishing email and Alice should take no chances." , 3)]
         # NEXT PAGE
         next = "Scenario7"
 
-        ScenarioFrame.__init__(self, parent,controller, scenario6_title, scenario6_text, OPTIONS, v, next)
+        ScenarioFrame.__init__(self, parent,controller, scenario6_title, scenario6_text, OPTIONS, next)
 
 
+# SCENARIO 7 - BRINGING DATA HOME
 class Scenario7(ScenarioFrame, tk.Frame):
-    # INITIALIZES SCENARIO 7
     def __init__(self, parent, controller):
         # SCENARIO
-        scenario7_title = "Scenario 7: ..."
-        scenario7_text = "INFORMATION ..."
+        scenario7_title = "Scenario 7: Bringing Data Home"
+        scenario7_text = "At the end of the day, Alice realizes that she was unable to complete all of her work that is due by tomorrow morning.  To ensure that she is able to complete everything by tomorrow, Alice decides to bring some of her work home with her.  She copies the data she needs onto a flash drives and packs up.  When she arrives home, she realizes that she left her laptop at work.  So she decides to use her own personal computer to finish the work that she needs to do. \nWhat are all the security violations that Alice is making?"
         # SCENARIO RADIO BUTTONS OPTIONS
-        OPTIONS = [("ANSWER 1" , 1),
-        ("ANSWER 2" , 2),
-        ("ANSWER 3" , 3)]
-        v = IntVar()
+        OPTIONS = [("Alice should never copy data onto flash drives." , 1),
+        ("Alice should not use her own personal computer for work." , 2),
+        ("Alice should never copy data onto flash drives and Alice should not use her own personal computer for work." , 3)]
         # NEXT PAGE
         next = "Scenario8"
 
-        ScenarioFrame.__init__(self, parent,controller, scenario7_title, scenario7_text, OPTIONS, v, next)
+        ScenarioFrame.__init__(self, parent,controller, scenario7_title, scenario7_text, OPTIONS, next)
 
 
+# SCENARIO 8 - VPN vs PUBLIC NETWORK
 class Scenario8(ScenarioFrame, tk.Frame):
-    # INITIALIZES SCENARIO 8
     def __init__(self, parent, controller):
         # SCENARIO
-        scenario8_title = "Scenario 8: ..."
-        scenario8_text = "INFORMATION ..."
+        scenario8_title = "Scenario 8: VPN vs. Public Network"
+        scenario8_text = "It is Friday and so Alice has decided to work from home today.  It is 9AM in the morning and Alice is craving a coffee. To satisfy this craving Alice decides to go to her local coffee shop to grab a coffee and do some work. After Alice grabs her cup of coffee, she sits down in a comfy chair and logs onto the coffee shop’s WiFi network and begins to do work. \nIs this a potential security hazard?"
         # SCENARIO RADIO BUTTONS OPTIONS
-        OPTIONS = [("ANSWER 1" , 1),
-        ("ANSWER 2" , 2),
-        ("ANSWER 3" , 3)]
-        v = IntVar()
+        OPTIONS = [("Yes, the coffee shop’s network is a public network.  The network is not secure. Instead Alice should log into her company’s VPN (Virtual Private Network). Alice’s VPN is a secured network and she will cause no harm to her company." , 1),
+        ("No, the coffee shop’s network is secure even though it is a public network.  In the end it doesn’t matter if she uses the coffee shop’s WiFi or if she logs into her company’s VPN." , 2),
+        ("No, all WiFi networks are secure" , 3)]
         # NEXT PAGE
         next = "Scenario9"
 
-        ScenarioFrame.__init__(self, parent,controller, scenario8_title, scenario8_text, OPTIONS, v, next)
+        ScenarioFrame.__init__(self, parent,controller, scenario8_title, scenario8_text, OPTIONS, next)
 
 
+# SCENARIO 9 - DATA MANAGEMENT / ENCRYPTION
 class Scenario9(ScenarioFrame, tk.Frame):
-    # INITIALIZES SCENARIO 9
     def __init__(self, parent, controller):
         # SCENARIO
-        scenario9_title = "Scenario 9: ..."
-        scenario9_text = "INFORMATION ..."
+        scenario9_title = "Scenario 9: Data Management / Encryption"
+        scenario9_text = "The next week Alice returns to work on Monday.  After her morning standup meeting Alice goes and meets up with Bob to take a coffee break.  While talking with Bob, they get into a discussion about data and encryption. \nAlice believes that you should always encrypt sensitive and confidential information.  Her motto is - you can never be too careful. \nBob believes that you do not need to encrypt every single piece of sensitive and/or confidential information. The company already has countermeasures put in place if any hackers were to try and break into the systems and steal data. \nWho is right, Alice or Bob?"
         # SCENARIO RADIO BUTTONS OPTIONS
-        OPTIONS = [("ANSWER 1" , 1),
-        ("ANSWER 2" , 2),
-        ("ANSWER 3" , 3)]
-        v = IntVar()
-        # NEXT PAGE
-        next = "Scenario10"
-
-        ScenarioFrame.__init__(self, parent,controller, scenario9_title, scenario9_text, OPTIONS, v, next)
-
-
-class Scenario10(ScenarioFrame, tk.Frame):
-    # INITIALIZES SCENARIO 10
-    def __init__(self, parent, controller):
-        # SCENARIO
-        scenario10_title = "Scenario 10: ..."
-        scenario10_text = "INFORMATION ..."
-        # SCENARIO RADIO BUTTONS OPTIONS
-        OPTIONS = [("ANSWER 1" , 1),
-        ("ANSWER 2" , 2),
-        ("ANSWER 3" , 3)]
-        v = IntVar()
-        # NEXT PAGE
-        next = "Scenario11"
-
-        ScenarioFrame.__init__(self, parent,controller, scenario10_title, scenario10_text, OPTIONS, v, next)
-
-
-class Scenario11(ScenarioFrame, tk.Frame):
-    # INITIALIZES SCENARIO 11
-    def __init__(self, parent, controller):
-        # SCENARIO
-        scenario11_title = "Scenario 11: ..."
-        scenario11_text = "INFORMATION ..."
-        # SCENARIO RADIO BUTTONS OPTIONS
-        OPTIONS = [("ANSWER 1" , 1),
-        ("ANSWER 2" , 2),
-        ("ANSWER 3" , 3)]
-        v = IntVar()
-        # NEXT PAGE
-        next = "Scenario12"
-
-        ScenarioFrame.__init__(self, parent,controller, scenario11_title, scenario11_text, OPTIONS, v, next)
-
-
-class Scenario12(ScenarioFrame, tk.Frame):
-    # INITIALIZES SCENARIO 12
-    def __init__(self, parent, controller):
-        # SCENARIO
-        scenario12_title = "Scenario 12: ..."
-        scenario12_text = "INFORMATION ..."
-        # SCENARIO RADIO BUTTONS OPTIONS
-        OPTIONS = [("ANSWER 1" , 1),
-        ("ANSWER 2" , 2),
-        ("ANSWER 3" , 3)]
-        v = IntVar()
+        OPTIONS = [("Alice and Bob" , 1),
+        ("Alice" , 2),
+        ("Bob" , 3)]
         # NEXT PAGE
         next = "Score"
 
-        ScenarioFrame.__init__(self, parent,controller, scenario12_title, scenario12_text, OPTIONS, v, next)
+        ScenarioFrame.__init__(self, parent,controller, scenario9_title, scenario9_text, OPTIONS, next)

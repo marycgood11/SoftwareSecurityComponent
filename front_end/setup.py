@@ -28,7 +28,7 @@ class UI_Setup(tk.Tk):
 
         # ALL THE FRAMES IN THE APPLICATION
         self.frames = {}
-        for F in (welcomepage.WelcomePage, homepage.HomePage, scenarios.Scenario1, scenarios.Scenario2, scenarios.Scenario3, scenarios.Scenario4, scenarios.Scenario5, scenarios.Scenario6, scenarios.Scenario7, scenarios.Scenario8, scenarios.Scenario9, scenarios.Scenario10, scenarios.Scenario11, scenarios.Scenario12, score.Score):
+        for F in (welcomepage.WelcomePage, homepage.HomePage, scenarios.Scenario1, scenarios.Scenario2, scenarios.Scenario3, scenarios.Scenario4, scenarios.Scenario5, scenarios.Scenario6, scenarios.Scenario7, scenarios.Scenario8, scenarios.Scenario9, score.Score):
             page_name = F.__name__
             frame = F(parent=container, controller=self)
             self.frames[page_name] = frame

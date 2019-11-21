@@ -9,5 +9,9 @@ class Score(tk.Frame):
         tk.Frame.__init__(self, parent)
         self.controller = controller
         self.configure(background="#5BA3FF")
-        
+
+        # ADD IN SCORE LABEL
+        # ADD IN INFO TO IMPROVE PERSONAL SECURITY
+        # ADD COMPLETE BUTTON - SENDS EMAIL TO ADMIN ACCOUNT
+
         self.score=0
